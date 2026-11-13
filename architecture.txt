@@ -1,0 +1,16 @@
+[Camera Input Stream / Video]
+         │
+         ▼
+ 1. Blur-Aware Gating ──(Drop blurry frames)──► [Skip Frame]
+         │ (Sharp frame)
+         ▼
+ 2. Object Detection & Perception (YOLOv8n / YOLO11n)
+         │
+         ├───► 3. Monocular Depth Calibration (MiDaS-Small / Relative-to-Metric Scale)
+         │
+         ├───► 4. Spatial Hazard Rules (Overhangs & Potholes/Drop-offs)
+         │
+         └───► 5. Image Preprocessing (CLAHE for Low-Light / Weather)
+         │
+         ▼
+ 6. Asynchronous Priority Voice Alert Manager (pyttsx3 / Queue)
